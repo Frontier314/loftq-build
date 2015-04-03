@@ -5,7 +5,7 @@ init=/sbin/init
 loglevel=8
 vmalloc=384M
 
-setenv bootargs noinitrd console=${console} console=tty0 init=${init} loglevel=${loglevel} vmalloc=${vmalloc} partitions=${partitions} root=${mmc_root} rootwait rw rootfstype=ext4 panic=10 consoleblank=0 ${extra}
+setenv bootargs noinitrd console=${console} console=tty0 init=${init} loglevel=${loglevel} vmalloc=${vmalloc} partitions=${partitions} root=${mmc_root} rootwait rw rootfstype=ext4 panic=10 consoleblank=0 ${extra} sunxi_gmac.mac_str=${ethaddr}
 
 ext4load mmc 0 0x43000000 boot/script.bin
 ext4load mmc 0 0x48000000 boot/uImage
